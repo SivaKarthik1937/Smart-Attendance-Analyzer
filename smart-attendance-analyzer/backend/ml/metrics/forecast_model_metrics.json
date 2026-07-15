@@ -1,0 +1,25 @@
+{
+  "best_model": "RandomForestRegressor",
+  "feature_columns": [
+    "current_attendance",
+    "previous_attendance",
+    "leaves_taken",
+    "internal_marks",
+    "distance_km",
+    "trend_rate"
+  ],
+  "models": [
+    {
+      "model_name": "LinearRegression",
+      "mae": 2.3984,
+      "rmse": 3.0373,
+      "r2_score": 0.9624
+    },
+    {
+      "model_name": "RandomForestRegressor",
+      "mae": 2.361,
+      "rmse": 3.0248,
+      "r2_score": 0.9627
+    }
+  ]
+}

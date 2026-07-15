@@ -1,0 +1,39 @@
+{
+  "silhouette_score": 0.3335,
+  "feature_columns": [
+    "avg_attendance",
+    "avg_leaves",
+    "avg_internal_marks",
+    "distance_km"
+  ],
+  "cluster_label_mapping": {
+    "1": "Critical",
+    "0": "Average",
+    "2": "Excellent"
+  },
+  "segment_counts": {
+    "Average": 2017,
+    "Excellent": 1935,
+    "Critical": 1048
+  },
+  "segment_feature_means": {
+    "Average": {
+      "avg_attendance": 72.09,
+      "avg_leaves": 6.99,
+      "avg_internal_marks": 55.31,
+      "distance_km": 13.97
+    },
+    "Critical": {
+      "avg_attendance": 52.64,
+      "avg_leaves": 11.89,
+      "avg_internal_marks": 41.64,
+      "distance_km": 12.67
+    },
+    "Excellent": {
+      "avg_attendance": 86.79,
+      "avg_leaves": 3.28,
+      "avg_internal_marks": 66.01,
+      "distance_km": 9.84
+    }
+  }
+}

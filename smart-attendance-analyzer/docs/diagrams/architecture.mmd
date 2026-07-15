@@ -1,0 +1,48 @@
+flowchart TB
+    subgraph Client["Frontend — React + TypeScript + Vite"]
+        UI["Pages: Login, Register, Home,\nStudent/Faculty Dashboard,\nPrediction, Analytics, Settings, Profile"]
+        Comp["Components & Charts\n(Card, Badge, RiskLedgerStrip,\nRecharts + custom Heatmap)"]
+        Hooks["Hooks: useAuth, useTheme"]
+        API_Client["Axios Client (services/api.ts)\nJWT interceptor + typed wrappers"]
+        UI --> Comp
+        UI --> Hooks
+        UI --> API_Client
+    end
+
+    subgraph Server["Backend — FastAPI"]
+        Routes["Route Modules\nauth · student · faculty\nprediction · analytics · export"]
+        Auth["auth.py\nJWT + bcrypt + RBAC"]
+        DB_Layer["database.py\nSQLAlchemy ORM"]
+        MLModule["ml/predict.py\nUnified inference + AI recommendations"]
+        Routes --> Auth
+        Routes --> DB_Layer
+        Routes --> MLModule
+    end
+
+    subgraph MLPipeline["ML Pipeline (offline training)"]
+        Dataset["generate_dataset.py\n5,000 students · 22.5K records"]
+        Train1["train_model.py\nRisk: Decision Tree vs Random Forest"]
+        Train2["train_forecast_model.py\nForecast: Linear Regression vs RF Regressor"]
+        Train3["train_segmentation_model.py\nSegmentation: K-Means"]
+        EDA["analysis/eda.py\nCorrelation, distributions, trends"]
+        Dataset --> Train1
+        Dataset --> Train2
+        Dataset --> Train3
+        Dataset --> EDA
+        Train1 --> Models[("saved_models/*.pkl\n+ metrics/*.json")]
+        Train2 --> Models
+        Train3 --> Models
+    end
+
+    subgraph Storage["Data Layer"]
+        SQLite[("SQLite\nattendance.db")]
+    end
+
+    API_Client -- "HTTPS / JSON\n(JWT Bearer)" --> Routes
+    DB_Layer --> SQLite
+    MLModule --> Models
+
+    style Client fill:#EEF1F6,stroke:#14213D,color:#14213D
+    style Server fill:#FDF6E3,stroke:#C9A227,color:#14213D
+    style MLPipeline fill:#DCEFE6,stroke:#2E7D5B,color:#14213D
+    style Storage fill:#F6DCDF,stroke:#B23A48,color:#14213D

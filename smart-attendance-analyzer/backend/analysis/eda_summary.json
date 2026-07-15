@@ -1,0 +1,123 @@
+{
+  "total_records": 22535,
+  "total_students": 5000,
+  "overall_avg_attendance": 73.69,
+  "students_below_75_pct_records": 10896,
+  "correlation_matrix": {
+    "Attendance_Percentage": {
+      "Attendance_Percentage": 1.0,
+      "Previous_Attendance_Percentage": 0.91,
+      "Leaves_Taken": -0.931,
+      "Internal_Marks": 0.824,
+      "Distance_KM": -0.096,
+      "Monthly_Attendance": 1.0
+    },
+    "Previous_Attendance_Percentage": {
+      "Attendance_Percentage": 0.91,
+      "Previous_Attendance_Percentage": 1.0,
+      "Leaves_Taken": -0.846,
+      "Internal_Marks": 0.751,
+      "Distance_KM": -0.088,
+      "Monthly_Attendance": 0.91
+    },
+    "Leaves_Taken": {
+      "Attendance_Percentage": -0.931,
+      "Previous_Attendance_Percentage": -0.846,
+      "Leaves_Taken": 1.0,
+      "Internal_Marks": -0.768,
+      "Distance_KM": 0.09,
+      "Monthly_Attendance": -0.931
+    },
+    "Internal_Marks": {
+      "Attendance_Percentage": 0.824,
+      "Previous_Attendance_Percentage": 0.751,
+      "Leaves_Taken": -0.768,
+      "Internal_Marks": 1.0,
+      "Distance_KM": -0.073,
+      "Monthly_Attendance": 0.824
+    },
+    "Distance_KM": {
+      "Attendance_Percentage": -0.096,
+      "Previous_Attendance_Percentage": -0.088,
+      "Leaves_Taken": 0.09,
+      "Internal_Marks": -0.073,
+      "Distance_KM": 1.0,
+      "Monthly_Attendance": -0.096
+    },
+    "Monthly_Attendance": {
+      "Attendance_Percentage": 1.0,
+      "Previous_Attendance_Percentage": 0.91,
+      "Leaves_Taken": -0.931,
+      "Internal_Marks": 0.824,
+      "Distance_KM": -0.096,
+      "Monthly_Attendance": 1.0
+    }
+  },
+  "department_avg_attendance": {
+    "Information Technology": 72.88,
+    "Electrical": 73.49,
+    "Computer Science": 73.57,
+    "Electronics": 73.95,
+    "Mechanical": 73.96,
+    "Civil": 74.3
+  },
+  "semester_avg_attendance": {
+    "1": 73.12,
+    "2": 73.6,
+    "3": 73.21,
+    "4": 73.58,
+    "5": 73.95,
+    "6": 73.95,
+    "7": 73.96,
+    "8": 74.21
+  },
+  "subject_avg_attendance": {
+    "Data Mining": 72.48,
+    "Cyber Security": 72.8,
+    "Cloud Computing": 72.96,
+    "Power Electronics": 72.97,
+    "Software Engineering": 72.98,
+    "Web Technologies": 73.18,
+    "DBMS": 73.19,
+    "Power Systems": 73.33,
+    "Operating Systems": 73.52,
+    "Data Structures": 73.56,
+    "Electrical Machines": 73.58,
+    "Computer Networks": 73.63,
+    "Control Systems": 73.63,
+    "Communication Systems": 73.71,
+    "VLSI Design": 73.76,
+    "Fluid Mechanics": 73.8,
+    "Manufacturing Tech": 73.89,
+    "Digital Electronics": 73.91,
+    "Circuit Theory": 73.96,
+    "AI & ML": 73.97,
+    "Machine Design": 73.99,
+    "Thermodynamics": 74.01,
+    "Microprocessors": 74.05,
+    "Heat Transfer": 74.12,
+    "Transportation Engg": 74.12,
+    "Geotechnical Engg": 74.18,
+    "Concrete Technology": 74.28,
+    "Signals & Systems": 74.3,
+    "Structural Analysis": 74.36,
+    "Surveying": 74.53
+  },
+  "monthly_avg_attendance": {
+    "Jan": 73.37,
+    "Feb": 73.49,
+    "Mar": 73.59,
+    "Apr": 73.65,
+    "May": 73.69,
+    "Jun": 73.69
+  },
+  "risk_distribution": {
+    "Low Risk": 10667,
+    "Medium Risk": 6024,
+    "High Risk": 5844
+  },
+  "gender_avg_attendance": {
+    "Female": 73.66,
+    "Male": 73.72
+  }
+}

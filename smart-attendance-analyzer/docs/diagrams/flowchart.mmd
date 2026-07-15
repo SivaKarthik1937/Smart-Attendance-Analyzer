@@ -1,0 +1,30 @@
+flowchart TD
+    Start(["User visits the app"]) --> HasAccount{"Has an account?"}
+    HasAccount -- No --> Register["Register\n(choose Student or Faculty role)"]
+    HasAccount -- Yes --> Login["Login"]
+    Register --> Login
+    Login --> AuthCheck{"Credentials valid?"}
+    AuthCheck -- No --> Login
+    AuthCheck -- Yes --> RoleCheck{"Role?"}
+
+    RoleCheck -- Student --> StudentDash["Student Dashboard\nOverall + subject attendance,\nmonthly trend, latest prediction"]
+    RoleCheck -- "Faculty / Admin" --> FacultyDash["Faculty Dashboard\nInstitution stats, defaulters,\nrisk distribution, comparisons"]
+
+    StudentDash --> StudentAction{"What next?"}
+    StudentAction -- "Run Prediction" --> Predict["Prediction Page\nRuns Risk + Forecast + Segmentation models"]
+    StudentAction -- "View Analytics" --> Analytics["Analytics Page\nCorrelation, model comparison, trends"]
+    StudentAction -- "Download Report" --> Export["Export attendance report\n(PDF or CSV)"]
+
+    FacultyDash --> FacultyAction{"What next?"}
+    FacultyAction -- "Lookup / What-if Prediction" --> Predict
+    FacultyAction -- "View Analytics" --> Analytics
+    FacultyAction -- "Export Class Report" --> Export
+
+    Predict --> Recommend["AI Recommendations generated\n(rule-based on risk + forecast + segment)"]
+    Recommend --> SaveHistory[("Prediction saved to history")]
+
+    style Start fill:#14213D,color:#F7F6F2
+    style StudentDash fill:#DCEFE6,stroke:#2E7D5B
+    style FacultyDash fill:#F6E6D2,stroke:#C9822E
+    style Predict fill:#FDF6E3,stroke:#C9A227
+    style Export fill:#F6DCDF,stroke:#B23A48

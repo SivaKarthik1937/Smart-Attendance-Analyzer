@@ -1,0 +1,83 @@
+erDiagram
+    USERS {
+        int id PK
+        string username
+        string email
+        string hashed_password
+        string role
+        int student_ref_id FK
+        int faculty_ref_id FK
+        int is_active
+        datetime created_at
+    }
+
+    STUDENTS {
+        int id PK
+        string student_code
+        string name
+        string department
+        int semester
+        string gender
+        float distance_km
+        float overall_attendance_percentage
+        string trend
+        datetime created_at
+    }
+
+    FACULTY {
+        int id PK
+        string faculty_code
+        string name
+        string department
+        string designation
+        datetime created_at
+    }
+
+    SUBJECTS {
+        int id PK
+        string name
+        string department
+    }
+
+    ATTENDANCE {
+        int id PK
+        int student_id FK
+        int subject_id FK
+        int total_classes
+        int classes_attended
+        float attendance_percentage
+        float previous_attendance_percentage
+        int leaves_taken
+        int internal_marks
+        float monthly_attendance
+        string risk_label
+        datetime updated_at
+    }
+
+    MONTHLY_ATTENDANCE {
+        int id PK
+        int student_id FK
+        int subject_id FK
+        string month
+        float attendance_percentage
+    }
+
+    PREDICTIONS {
+        int id PK
+        int student_id FK
+        string predicted_risk_level
+        string risk_model_used
+        float forecast_attendance_percentage
+        string forecast_model_used
+        string cluster_segment
+        string ai_recommendation
+        datetime created_at
+    }
+
+    USERS ||--o| STUDENTS : "links to (student login)"
+    USERS ||--o| FACULTY : "links to (faculty login)"
+    STUDENTS ||--o{ ATTENDANCE : "has many"
+    SUBJECTS ||--o{ ATTENDANCE : "has many"
+    STUDENTS ||--o{ MONTHLY_ATTENDANCE : "has many"
+    SUBJECTS ||--o{ MONTHLY_ATTENDANCE : "has many"
+    STUDENTS ||--o{ PREDICTIONS : "has many"
