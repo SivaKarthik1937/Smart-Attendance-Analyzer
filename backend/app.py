@@ -76,16 +76,23 @@ app = FastAPI(
 # CORS
 # --------------------------------------------------------------------------
 
-_default_origins = "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000"
+_default_origins = (
+    "http://localhost:5173,"
+    "http://127.0.0.1:5173,"
+    "http://localhost:3000,"
+    "https://smart-attendance-analyzer.vercel.app,"
+    "https://smart-attendance-analyzer-koifw7fap.vercel.app"
+)
 allowed_origins = os.getenv("CORS_ORIGINS", _default_origins).split(",")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[origin.strip() for origin in allowed_origins],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 # --------------------------------------------------------------------------
