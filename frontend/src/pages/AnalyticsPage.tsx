@@ -50,7 +50,7 @@ function ModelComparisonTable({
   bestKey,
 }: {
   title: string;
-  rows: Record<string, unknown>[];
+  rows: any[];
   columns: { key: string; label: string; format?: (v: number) => string }[];
   bestKey: string;
 }) {
